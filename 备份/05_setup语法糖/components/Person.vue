@@ -12,7 +12,7 @@
 defineOptions({
     name: 'Person'
 });
-let name = '张三'
+let name = '李四'
 let age = 18
 let tel = '13888888888'
 
