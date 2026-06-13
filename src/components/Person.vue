@@ -16,7 +16,6 @@ let { dogList, getDogs } = useDogs();
 defineOptions({
     name: 'Person'
 });
-
 </script>
 
 <style scoped>
