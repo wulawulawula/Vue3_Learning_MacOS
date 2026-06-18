@@ -10,6 +10,13 @@ export default defineConfig({
     vue(),
     VueDevTools(),
   ],
+  server:{
+    port:8000,
+    open:true,
+  },
+  preview:{
+    port:8001
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
