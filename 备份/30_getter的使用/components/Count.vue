@@ -27,9 +27,7 @@ console.log(storeToRefs(useCountStore()))
 let countStore = useCountStore();
 let { count,doubleCount } = storeToRefs(countStore);
 let sum = ref(1);
-countStore.$subscribe((mutate,state) => {
-    console.log('@@@@@数据发生了变化',mutate,state)
-})
+
 function add() {
     // useCountStore().add(sum.value);
     // 第一种修改方法，直接改

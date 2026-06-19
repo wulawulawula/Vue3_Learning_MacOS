@@ -12,13 +12,5 @@ export const useCountStore = defineStore("Count",{
             // this指代当前的store实例
             this.count += value
         }
-    },
-    getters:{
-        doubleCount(state){
-            return state.count * 2
-        },
-        tripleCount():number{
-            return this.count * 3
-        }
-    },
+    }
 })

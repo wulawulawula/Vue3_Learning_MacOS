@@ -1,7 +1,6 @@
 <template>
     <div class="count">
         <h2>当前求和为:{{ count }}</h2>
-        <h2>两倍数值为:{{ doubleCount }}</h2>
         <div class="btnArea">
             <select v-model.number="sum">
                 <option value="1">1</option>
@@ -23,13 +22,11 @@ defineOptions({
     name: 'Count',
 })
 // 使用storeToRefs将store中的属性转换为响应式数据,不使用直接解构赋值会丢失数据的响应式
+let { count } = storeToRefs(useCountStore());
 console.log(storeToRefs(useCountStore()))
 let countStore = useCountStore();
-let { count,doubleCount } = storeToRefs(countStore);
 let sum = ref(1);
-countStore.$subscribe((mutate,state) => {
-    console.log('@@@@@数据发生了变化',mutate,state)
-})
+
 function add() {
     // useCountStore().add(sum.value);
     // 第一种修改方法，直接改

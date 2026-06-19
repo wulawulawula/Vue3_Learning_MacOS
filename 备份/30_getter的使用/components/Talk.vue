@@ -1,6 +1,6 @@
 <template>
     <div class="talk">
-        <button @click="add">获取</button>
+        <button @click="">获取</button>
         <ul>
             <li v-for="item in talkList" :key="item.id">{{ item.content }}</li>
         </ul>
@@ -8,22 +8,22 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
+import axios from 'axios';
 import { nanoid } from 'nanoid';
 import { useTalkStore } from '@/store/Talk';
 defineOptions({
     name: 'Talk',
 })
 let talkList = useTalkStore().talkList
-function add() {
-    let obj = {
-        id: nanoid(),
-        content:nanoid()
-    }
-    talkList.unshift(obj);
-}
-useTalkStore().$subscribe(() => {
-    localStorage.setItem('talkList',JSON.stringify(talkList))
-})
+// async function getNew() {
+//     const { data:{content} } = await axios.get('https://api.uomg.com/api/rand/qinghau?format=json');
+//     let obj = {
+//         id: nanoid(),
+//         content
+//     }
+//     talkList.value.unshift(obj);
+// }
 </script>
 
 <style scoped>
